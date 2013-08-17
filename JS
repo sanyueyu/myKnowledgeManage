@@ -7,3 +7,5 @@
 4, 嵌套函数中的this不会指向调用外层函数的上下文-----解决:用self变量保存this
 
 5, javascript 自上而下加载解析到document,遇到词法错误,语法错误,会跳出本段<script>标签,但是还会继续加载随后的<script>标签中的javascript代码,如此循环,知道document加载完毕
+
+6, prototype 原型其实就是一个对象
