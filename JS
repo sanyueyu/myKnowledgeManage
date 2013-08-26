@@ -9,3 +9,10 @@
 5, javascript 自上而下加载解析到document,遇到词法错误,语法错误,会跳出本段<script>标签,但是还会继续加载随后的<script>标签中的javascript代码,如此循环,知道document加载完毕
 
 6, prototype 原型其实就是一个对象
+
+7, 实现bind函数 function bind(f, o) {   如此简单,-----------关注  proxy函数,且jquery已经实现:$.proxy();
+                  if(f.bind) return f.bind(o);
+                  else return function () {
+                    return f.apply(o, arguments);
+                  };
+                }
