@@ -16,3 +16,5 @@
                     return f.apply(o, arguments);
                   };
                 }
+
+8, 只要 new 表达式之后的 constructor 返回（return）一个引用对象（数组，对象，函数等），都将覆盖new创建的匿名对象，如果返回（return）一个原始类型（无 return 时其实为 return 原始类型 undefined），那么就返回 new 创建的匿名对象。
