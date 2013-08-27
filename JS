@@ -18,3 +18,10 @@
                 }
 
 8, new F()如果没有返回值(Undefined类型)，或返回值是5种基本型（Undefined类型、Null类型、Boolean类型、Number类型、String类型）之一，则new F()我们可以看成是原型扩展方法中的this; 如果返回是是数组啊、对象啊什么的，则返回值就是这些对象本身，此时new F() ≠ this。
+    加深理解:如下var F = function() {
+    return "sssss";(若将此处返回{}则会报错,hide无法使用)
+};
+F.prototype.hide = function() {
+    console.log("hello im hide");
+};
+new F().hide();              
