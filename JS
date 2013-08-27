@@ -17,4 +17,4 @@
                   };
                 }
 
-8, 只要 new 表达式之后的 constructor 返回（return）一个引用对象（数组，对象，函数等），都将覆盖new创建的匿名对象，如果返回（return）一个原始类型（无 return 时其实为 return 原始类型 undefined），那么就返回 new 创建的匿名对象。
+8, new F()如果没有返回值(Undefined类型)，或返回值是5种基本型（Undefined类型、Null类型、Boolean类型、Number类型、String类型）之一，则new F()我们可以看成是原型扩展方法中的this; 如果返回是是数组啊、对象啊什么的，则返回值就是这些对象本身，此时new F() ≠ this。
