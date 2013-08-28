@@ -25,3 +25,5 @@ F.prototype.hide = function() {
     console.log("hello im hide");
 };
 new F().hide();              
+
+9, context 其实没有这个关键字,都用它来做参数,代表上下文环境,如document等
