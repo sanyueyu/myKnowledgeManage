@@ -1,3 +1,12 @@
 1, angular调错是门学问,关键看第一条
 
 2, 'ng-app': tell angular which part of DOM angular can manage
+
+3, '$scope' as the connection VIEW, MODEL and CONTROLLER
+
+  '$location' as browser location
+  
+  '$route' as switch view based on location
+  
+  '$http' as comminicate with servers
+ 
