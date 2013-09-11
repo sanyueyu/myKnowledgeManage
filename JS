@@ -29,3 +29,24 @@ new F().hide();
 9, context 其实没有这个关键字,都用它来做参数,代表上下文环境,如document等
 
 10, '&&'短路(short circuiting) 运算符首先计算左操作数的值,如果计算结果是假值,'&&'这时简单地返回左操作数的值,而不会对右操作数进行计算.
+
+11, 用于深入理解构造函数
+function inherit(o) {
+    var f = function(){};
+    f.prototype = o;
+    return new f();
+}
+
+function range(from, to) {
+    var r = inherit(range.methods);
+    
+    r.from = from;
+    r.to = to;
+    return r;
+}
+range.methods = {
+    sum: function() {return this.from + this.to;}
+};
+
+var hello = range(13, 12);
+console.log(hello.sum());
