@@ -50,3 +50,5 @@ range.methods = {
 
 var hello = range(13, 12);
 console.log(hello.sum());
+
+12, 函数调用在圆括号内包含一组实参列表,先计算这些实参表达式,然后传入函数内
