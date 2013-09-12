@@ -55,4 +55,12 @@ console.log(hello.sum());
 
 13, 同上,return语句,先计算return语句后的expression,然后再返回expression的值给调用程序
 
-14, 关联闭包的作用域链都是"活动的",记住这一点非常重要,嵌套的函数不会将作用域内的私有成员复制一份,也不会对所绑定的变量生成静态快照(static snapshot)
+14, 关联闭包的作用域链都是"活动的",记住这一点非常重要,嵌套的函数不会将作用域内的私有成员复制一份,也不会对所绑定的变量生成静态快照(static snapshot)\
+function cont() {
+    var a = [];
+    for(var i = 0; i< 10; i++) a[i] = function() {return i};
+    return a;
+}
+
+var test = cont();
+test[3](); //返回10
