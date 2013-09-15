@@ -64,3 +64,18 @@ function cont() {
 
 var test = cont();
 test[3](); //返回10
+
+15, 再学bind:ES3.0实现bind
+                  if(typeof Function.prototype.bind == 'undefinde') {
+                      Function.prototype.bind = function(thisArg) {
+                          var fn = this,
+                              slice = Array.prototype.slice,
+                              args = slice.call(arguments, 1);
+                          return function() {
+                              return fn.applay(thisArg, args.concat(slice.call(arguments)));
+                          };
+                      }                                    
+                  }
+     其中两点需要说明: 1 两处的arguments不是同一arguments
+                       2 thisArg指的是第一个参数
+
