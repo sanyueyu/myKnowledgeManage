@@ -79,3 +79,19 @@ test[3](); //返回10
      其中两点需要说明: 1 两处的arguments不是同一arguments
                        2 thisArg指的是第一个参数
 
+16, 深入理解JS函数作用域 和 事件动态绑定
+    病状:for (var i = 0, len = $("li").length; i < len; i++) {
+            $($("li")[i]).bind("click", function () {
+                console.log(i);
+            });
+    }//每次点击li标签,显示的都是3有木有
+    病因:JS函数作用域,不是块状作用域,亲,此处for循环没有作用域,每次读取的都是同一个i的值
+         详细描述见<权威指南>P59 作用域链的讲解
+    对症下药:for (var i = 0, len = $("li").length; i < len; i++) {
+               (function (i) {//创建函数保留i
+                 $($("li")[i]).bind("click", function () {
+                     console.log(i);
+                 });
+             })(i)
+           }
+    
