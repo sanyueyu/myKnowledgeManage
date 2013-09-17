@@ -94,4 +94,17 @@ test[3](); //返回10
                  });
              })(i)
            }
-    
+    或者分开写:
+    function a(){
+    for(var i = 0, len = $("li").length;i < len; i++) {
+        console.log($("li")[i]);
+        b(i);
+    }
+
+    }
+    function b(i){
+    $($("li")[i]).bind("click", function() {
+        console.log(i);
+    });
+     }
+  a();
