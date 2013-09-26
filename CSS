@@ -12,3 +12,4 @@
 
 7, 同样的z-index时,后面的覆盖前面的
 
+8, position:absolute设置left为负值不会出现滚动条,设置right为负值会出现滚动条
