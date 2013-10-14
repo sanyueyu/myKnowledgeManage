@@ -3,6 +3,9 @@
 2, 更新DOM友好的做法是:结点克隆一个镜像-------对镜像修改-------镜像替换原来子树
 
 3, 深度复制一个对象$.extend(true, xx, xx);
+    $.extend官方解释:Merge the contents of two or more objects together into the first object.
+    同时要记住:1,he target object (first argument) will be modified
+               2,if a property of the first object is itself an object or array, it will be completely overwritten by a property with the same key in the second or subsequent object. 
 
 4, 浏览器对WEB界面自上而下解析,所以jquery对DOM的操作若写在header标签里不报错,但返回null
 
