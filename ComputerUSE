@@ -1,3 +1,5 @@
 1, 打不开的快捷方式,可以选择 右击---'以管理员身份运行' 试试
 
 2, a functional approach centered around generic collection process-ing functions is ideal for handling data about people and an object-oriented approach works best for simulating people.
+
+3, heroku open a specific app such as "heroku domains -a noteofmoney"
