@@ -137,3 +137,34 @@ test[3](); //返回10
        f1();
    };
    f2() //输出top
+   
+25 javascript模仿JAVA实现public,private和privileged的模式
+   Public
+
+function Constructor(...) {
+this.membername = value;
+}
+Constructor.prototype.membername = value;
+
+Private
+
+function Constructor(...) {
+var that = this;
+var membername = value;
+function membername(...) {...}
+
+}
+
+Note: The function statement
+
+function membername(...) {...}
+
+is shorthand for
+
+var membername = function membername(...) {...};
+
+Privileged
+
+function Constructor(...) {
+this.membername = function (...) {...};
+}
