@@ -123,3 +123,17 @@ test[3](); //返回10
 22 json是指符合一定格式的字符串,JSON.parse用来将JSON字符串反序列化成对象，JSON.stringify用来将对象序列化成JSON字符串
 
 23 函数中的this不是创建是决定的,而是被调用时决定的
+
+24 函数作用域的嵌套关系是定义时决定的,而不是调用时决定的,也就是说javascript的作用域是静态作用域,又叫词法作用域,这是因为作用域的嵌套关系可以在语法分析时确定,而不必等到运行时确定.
+   example:
+   var scope = 'top';
+   var f1 = function() {
+       console.log(scope);                                    
+   };
+   f1() //输出top
+   
+   var f2 = function() {
+       var scope = 'f2';
+       f1();
+   };
+   f2() //输出top
