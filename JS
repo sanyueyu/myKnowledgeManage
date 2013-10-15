@@ -170,3 +170,18 @@ this.membername = function (...) {...};
 }
 
 26 除非必须用构造函数闭包,否则尽量用原型定义成员函数,因为这样可以减少开销.尽量在构造函数内定义一般成员,尤其是对象或数组,因为用原型定义的成员是多个实例共享的.
+
+27 减少闭包对内存的消耗-----闭包返回前释放掉不再使用的变量
+var f = (function(){
+    var a = {name:"var3"};
+    var b = ["var1","var2"];
+    var c = document.getElementByTagName("li");
+    //****其它变量
+    //***一些运算
+    //闭包返回前释放掉不再使用的变量
+    b = c = null;
+    var res = function(){
+        alert(a.name);
+        }
+    return res;
+})()
