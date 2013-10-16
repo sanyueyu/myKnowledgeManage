@@ -1,0 +1,6 @@
+1,MongoDB 验证数据库连接是否连接上代码(由于mongoose是异步的,就算没有连上,程序也继续向下运行):
+  mongoose.connect("mongodb://sanyueyu:457961000@ds027738.mongolab.com:27738/nomdb", function(error) {
+    console.log("sssssssssssssssss");
+    if(error) console.log(error);
+    console.log("dddddddddddddd");
+  });
