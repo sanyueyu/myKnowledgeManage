@@ -3,3 +3,5 @@
 2, a functional approach centered around generic collection process-ing functions is ideal for handling data about people and an object-oriented approach works best for simulating people.
 
 3, heroku open a specific app such as "heroku domains -a noteofmoney"
+
+4, 重新刷新页面 ctrl + F5
