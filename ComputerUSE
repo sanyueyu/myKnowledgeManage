@@ -5,3 +5,8 @@
 3, heroku open a specific app such as "heroku domains -a noteofmoney"
 
 4, 重新刷新页面 ctrl + F5
+
+5, 在桌面新建 启动app.bat 并写入 ：
+    node d:\blog\app
+   以后我们就可以通过依次打开 启动mongodb.bat 和 启动app.bat 来启动我们的博客了。
+  牛逼!
