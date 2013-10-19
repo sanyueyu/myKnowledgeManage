@@ -4,3 +4,15 @@
     if(error) console.log(error);
     console.log("dddddddddddddd");
   });
+
+2, 本地安装及运行mongodb:
+
+第一步：下载安装包：官方下载地址←单击此处,如果是win系统，注意是64位还是32位版本的，请选择正确的版本。
+第二步：新建目录“D:\MongoDB”，解压下载到的安装包，找到bin目录下面全部.exe文件，拷贝到刚创建的目录下。
+第三步：在“D:\MongoDB”目录下新建“data”文件夹，它将会作为数据存放的根文件夹。
+　　配置Mongo服务端：
+
+　　打开CMD窗口，按照如下方式输入命令：
+　　> d:
+　　> cd D:\MongoDB
+　　> mongod --dbpath D:\MongoDB\data
