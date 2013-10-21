@@ -16,3 +16,5 @@
 　　> d:
 　　> cd D:\MongoDB
 　　> mongod --dbpath D:\MongoDB\data
+　　
+3, mongoDB启动不了 发现是上次没有正常关闭mongodb的原因 暂时的解决办法是删除所有数据表 重启mongodb
