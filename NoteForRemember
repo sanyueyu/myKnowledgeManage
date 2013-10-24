@@ -31,3 +31,20 @@
     }
     法则:可复用成员应该转移到原型中而不是放置在this中
     
+    5 临时构造函数
+    function inherit(C, P) {
+        var F = function() {};
+        F.prototype = P.prototype;
+        C.prototype = new F();
+    }
+    好处不少 称为"圣杯"
+    
+    ``大部分基于类的语言中,每次在调用子类的构造函数时,父类的构造函数也将被自动调用
+    ``避免使用以上
+    
+    6 原型继承
+    function object(o) {
+        function F() {}
+        F.prototype = o;
+        return new F();
+    }
