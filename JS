@@ -195,3 +195,8 @@ var f = (function(){
       var a = b = 0;                  
    }
    a是局部变量但b是全局变量,这缘于从右至左的操作符优先级
+   解决:
+   function foo() {
+      var a, b;
+      a = b = 0;
+   }
