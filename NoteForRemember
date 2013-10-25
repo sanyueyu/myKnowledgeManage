@@ -48,3 +48,9 @@
         F.prototype = o;
         return new F();
     }
+
+7 只是用一个var在函数顶部进行变量声明时一种非常有用的模式(尤其用于DOM文档的引用,是用单一var声明将DOM引用赋值给局部变量)
+
+8 过滤掉原型链上的属性时,使用hasOwnProperty()方法
+
+9 parseInt(year, 10);最好加上十进制
