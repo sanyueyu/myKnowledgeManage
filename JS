@@ -190,3 +190,8 @@ var f = (function(){
 28 mouseover和mouseenter
    mouseover: 鼠标进入元素时触发
    mouseenter: 类似"mouseover",但不冒泡(难怪我接收不到mouseenter事件)
+   
+29 function foo() {
+      var a = b = 0;                  
+   }
+   a是局部变量但b是全局变量,这缘于从右至左的操作符优先级
