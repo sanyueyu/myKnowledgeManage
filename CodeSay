@@ -3,3 +3,8 @@ $('.top').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
 });
+
+2,  var ninja = function myNinja(){
+        assert( ninja == myNinja, "This function is named two things - at once!" );
+    };
+    typeof myNinja == "undefined"; //myNinja isn't defined outside of the function
