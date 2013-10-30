@@ -37,3 +37,39 @@
 17, DOCTYPE 影响 CSS 处理,作为W3C的标准,一定要加 DOCTYPE声名(html5好像变了).
 
 18, css错误解析规则:(1)未知的属性 (2)不合法的值 (3)畸形的声明 (4)不可用的@关键字 (5)样式表的意外结束 (6)字符串的意外结束
+
+19, 如果值是0则单位可有可无 em与字体大小有关,与作用到元素上的font-size的值大小相等
+
+20, css比较原则:a,b,c,d依次比较特殊性,从a开始,a相同则再比较b
+    1,如果 HTML 标签的 'style' 属性中该样式存在，则记 a 为 1；
+    2,数一下选择器中 ID 选择器的个数作为 b 的值，比如，以上的 '#c1' 和 '#c2'都算；
+    3,其他属性 以及 伪类（pseudo-classes）的总数量是 c 的值，比如，上面例子中的'.con'，':hover'等；
+    4,元素名和伪元素的数量是 d 的值；比如上面例子中的 ‘div’。
+    example:
+    <style type="text/css">
+    div {                 
+        width: 100px;
+        height: 100px;
+    }
+ 
+    #c1 #c2 div.con {     /* a=0 b=2 c=1 d=1 -> specificity = 0,2,1,1 */
+        background-color: yellow;
+    }
+ 
+    div {                 /* a=0 b=0 c=0 d=1 -> specificity = 0,0,0,1 */
+        background-color: black;
+    }
+ 
+    #c2 div {             /* a=0 b=1 c=0 d=1 -> specificity = 0,1,0,1 */
+        background-color: blue;
+    }
+ 
+    #c2 #content {        /* a=0 b=2 c=0 d=0 -> specificity = 0,2,0,0 */
+        background-color: red;
+    }
+    </style>
+    <div id="c1">
+        <div id="c2">
+            <div id="content" class="con"></div>
+        </div>
+    </div>
