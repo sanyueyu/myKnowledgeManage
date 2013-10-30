@@ -78,4 +78,28 @@
 21, Progressive Enhancement:从内容花生开始，将其标记为富含语义的 (X)HTML. 接着给内容裹上一层富含奶油的CSS. 最后，添加JavaScript作为糖果硬壳，这就做成了一颗可口无比的美味（并使得它不会在你手里融化）
     老外真有情调...
     
+22, -margin-
+    有效:margin应用于非table类型的元素上,
+    无效:对于行内非替换元素(例如span),垂直方向的margin不起作用
+    折叠:垂直方向上的不同元素相邻的margin,在某些情况下会发生折叠现象
+    
+    -padding-  
+    默认值为0
+    应用如margin
+    
+    -border-
+    
+23, margin折叠的规则:
+    1. 两个或多个毗邻的普通流中的块元素<垂直方向>上的margin会折叠
+    2. 浮动元素/inline-block的元素/绝对定位元素的margin不会和垂直方向上的其他元素的margin折叠
+    3. 创建了块级格式化内容的元素，不和它的子元素发生margin折叠
+    4. 元素自身的margin-bottom和margin-top相邻时也会折叠
+    
+24, 元素的包含块不一定是这个元素的父元素
+    1,如果该元素的定位（position）为 “relative” （相对定位）或者 “static”（静态定位），它的包含块由它最近的块级、单元格 （table cell）或者行内块（inline-block）祖先元素的内容框创建。
+    2,如果元素是固定定位 (“position:fixed”) 元素，那么它的包含块是当前可视窗口。
+    3,如果元素是绝对定位（”position: absolute”）元素，包含块由离它最近的 position 属性为 “absolute”、“relative” 或者 “fixed” 的祖先元素创建。
+    
+    
+    
     
