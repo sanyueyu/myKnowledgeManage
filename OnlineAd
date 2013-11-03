@@ -1,2 +1,9 @@
-1, RTB（real time bidding）实时竞价
-  
+1, RTB（real time bidding）实时竞价----是一种利用第三方技术在数以百万计的网站上针对每一个用户展示行为进行评估以及出价的竞价技术。
+   DSP(demand side platform) 需求方平台 ----DSP就是广告主服务平台，广告主可以在平台上设置广告的目标受众、投放地域、广告出价等等。
+   SSP(sell side platform) 供应方平台 
+   Ad Exchange 广告交易平台----一个开放的、能够将出版商和广告商联系在一起的在线广告市场(类似于股票交易所)。
+   DMP（data-mangement platform）数据管理平台----是把分散的数据进行整合纳入统一的技术平台。
+   Ad Network 广告网络平台
+   
+2，Advertisers(广告主)
+   Publisher(媒体)
