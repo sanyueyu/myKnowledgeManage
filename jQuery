@@ -16,3 +16,6 @@
 7, 判断jquery对象是否存在
     错误描述：var a = $("#test"); if(!!a) {alert("ok!");} 运行这段代码你会发现，永远都会 alert，不管是否存在 id = "test" 的DOM
 　　避免办法：jQuery 的 $ 方法查找对象，始终都会返回一个 jQuery 对象的，不管是否存在查找的结果。检查是否有结果请利用 length 属性，比如 if(a.length>0) {alert("ok!");}
+
+8, 针对checkbox多选框问题，$("#toggle-all")[0]返回的才是一个原生javascript对象，$("#toggle-all")仅是jQuery对象，使其选中
+   的语句是$("#toggle-all")[0].checked = true
