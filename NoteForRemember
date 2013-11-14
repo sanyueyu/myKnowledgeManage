@@ -100,3 +100,7 @@
 　　
 　如果屏幕宽度小于400像素，则column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）。
 21 图片自适应css设置 img {max-width: 100%}　
+
+22 CSS2.1及所有后继版本中，对于任何以破折号、下划线开头的property:value组合和不包含标识符的@-keywords组合，都以忽略的方式处理。
+
+23 对于行内非替换元素（例如 SPAN），垂直方向的margin不起作用。
