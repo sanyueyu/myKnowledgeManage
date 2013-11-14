@@ -3,3 +3,6 @@
 2, If a view is composed in a controller action method it will be instantiated and rendered if the view has not been composed in the current or previous action methods.
 
 If a view was composed in the previous action method and is not composed in the current action method, it will be disposed and removed from the DOM.
+
+3, 通过URL具体传递给Controller的参数规格，在Router中有规定 
+    such as: "@:login": "user#show" 那么控制器user获取的参数规格为params.login
