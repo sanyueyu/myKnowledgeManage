@@ -99,7 +99,18 @@
     1,如果该元素的定位（position）为 “relative” （相对定位）或者 “static”（静态定位），它的包含块由它最近的块级、单元格 （table cell）或者行内块（inline-block）祖先元素的内容框创建。
     2,如果元素是固定定位 (“position:fixed”) 元素，那么它的包含块是当前可视窗口。
     3,如果元素是绝对定位（”position: absolute”）元素，包含块由离它最近的 position 属性为 “absolute”、“relative” 或者 “fixed” 的祖先元素创建。
-    
+
+25, 清楚浮动的最好方法 ^_^ 
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+/* Hides from IE-mac */
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */   
     
     
     
