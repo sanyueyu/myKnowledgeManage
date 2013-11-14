@@ -75,3 +75,28 @@
    
 15 content用来和:after及:before伪元素一起使用，在对象前或后显示内容。
 
+16 "Event Loop是一个程序结构，用于等待和发送消息和事件。（a programming construct that waits for and dispatches events or messages in a program.）"
+    简单说，就是在程序中设置两个线程：一个负责程序本身的运行，称为"主线程"；另一个负责主线程与其他进程（主要是各种I/O操作）的通信，被称为"Event Loop线程"（可以译为"消息线程"）。
+    
+17 <meta name="viewport" content="width=device-width, initial-scale=1" />
+    viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。
+    
+18 字体大小em 是页面默认大小的100%，即16像素。
+
+19 <link rel="stylesheet" type="text/css"
+　　　　media="screen and (max-device-width: 400px)"
+　　　　href="tinyScreen.css" />
+　如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件
+　
+20 @media screen and (max-device-width: 400px) {
+　　　　.column {
+　　　　　　float: none;
+　　　　　　width:auto;
+　　　　}
+　　　　#sidebar {
+　　　　　　display:none;
+　　　　}
+　　}
+　　
+　如果屏幕宽度小于400像素，则column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）。
+21 图片自适应css设置 img {max-width: 100%}　
