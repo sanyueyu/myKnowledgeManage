@@ -10,3 +10,5 @@ If a view was composed in the previous action method and is not composed in the 
 4, The Layout is the top-level application view. When a new controller is activated, the Layout is responsible for changing the main view to the view of the new controller.
 
 5, mediator :be used for most of the inter-module communication in Chaplin applications. Modules can emit events using this.publishEvent in order to notify other modules, and listen for such events using this.subscribeEvent.
+
+6, A controller is the place where a model and associated views are instantiated. 
