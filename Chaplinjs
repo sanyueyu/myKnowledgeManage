@@ -6,3 +6,5 @@ If a view was composed in the previous action method and is not composed in the 
 
 3, 通过URL具体传递给Controller的参数规格，在Router中有规定 
     such as: "@:login": "user#show" 那么控制器user获取的参数规格为params.login
+
+4, The Layout is the top-level application view. When a new controller is activated, the Layout is responsible for changing the main view to the view of the new controller.
