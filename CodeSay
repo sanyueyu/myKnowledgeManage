@@ -13,7 +13,7 @@ $('.top').click(function(){
 res = {};
 res.foo = function(a, b) {return a + b;}; 
 var bar = res.foo; //将原生的方法再还回去 
-res.foo = function(a, b) {res.foo = bar; return 100 + res.foo(a, b)}; //只在第一次执行res.end方法时调用
+res.foo = function(a, b) {res.foo = bar; return 100 + res.foo(a, b)}; //只在第一次执行res.end方法时调用 100 + res.foo(a, b)
 res.foo(1, 2) //103
 res.foo(1, 2) // 3
 
