@@ -17,3 +17,15 @@ res.foo = function(a, b) {res.foo = bar; return 100 + res.foo(a, b)}; //只在�
 res.foo(1, 2) //103
 res.foo(1, 2) // 3
 
+4, function finder(valueFun, bestFun, coll) {
+    return _.reduce(coll, function(best, current) {
+        var bestValue = valueFun(best);
+        var currentValue = valueFun(current);
+        
+        return (bestValue === bestFun(bestValue, currentValue)) ? best : current;
+    });
+}
+
+valueFun: to build a comparable(可比的) value
+bestFun: compare two values and return the "best" value of the two
+coll: an array
