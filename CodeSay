@@ -44,3 +44,4 @@ function fnull(fun) {
 var nums = [1, 2, 3, null, 5];
 var safeMult = fnull(function(total, n){return total * n}, 1, 1);
 _.reduce(nums, safeMult);
+sadeMult的参数只有俩，所以要补全俩就可以
