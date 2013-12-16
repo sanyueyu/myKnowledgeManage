@@ -1,3 +1,48 @@
 1, 除非你重写了contructor，默认情况下，在一个实例被创建时CoffeeScript会调用其父类的构造器。
 
 2, 若obj = getName : -> @name 则obj.getName将返回一个函数，obj.getName()才运行对象相应的方法
+
+3, coffee学习整理，（精华所在）：
+45 coffee的注释是前面加#
+   coffee中可以使用制表符代替花括号（{}）
+   数组的列举用 for name, i in []
+   对象的列举用 for key, value of {}
+   while 的用法有些像Array.prototype.map()
+   [1..3]用法有些像slice()
+   coffee用in解决字符串indexOf()
+   @指this  ：：指prototype
+   ?操作符最会在变量为null 和 undefined时返回 true 还能用它来替换||操作符
+   ？用来检查检查属性是否能被调用 blackKnight.getLegs().kick?()
+   简便的设置实例属性
+      class Animal
+        constructor: (@name) ->
+   CoffeeScript把胖箭头语法扩展到类中,因此在实例方法上使用胖箭头你就能确保方法能在正确的上下文中执行——this总是等于当前的实例对象。
+    这在事件回调中尤其有用
+   super()调用父类方法
+   除非重写constructor,默认情况下，在一个实例被创建时会调用父类的构造器
+   静态变量是直接拷贝给子类的,而不是像实例属性那样通过原型来实现。这都是JavaScript原型架构的实现细节所致,而且这是一个比较难解决的问题。
+   for in 相当于forEach() and map() ,when相当于filter（），不要忘记加括号-表示立即执行
+   Math.max()/Math.min()检索最大值最小值
+
+Mixins
+CoffeeScript并不直接提供对Mixins的支持,理由是你自己完全可以很容易的实现。例如,
+下面有两个函数,extend()和include()分别会把类属性和实例属性添加到一个类中。
+extend = (obj, mixin) ->
+obj[name] = method for name, method of mixin
+obj
+include = (klass, mixin) ->
+extend klass.prototype, mixin
+# Usage
+include Parrot,
+isDeceased: true
+(new Parrot).isDeceased
+在继承不合适时Mixins是一种不错的在模块间共享通用逻辑的的模式。较之于继承只能实现
+从单一的父类继承,Mixins的优势是能够实现多个继承。 
+
+解构赋值对任意深度嵌套的数组或对象都适用,方便从嵌套的属性中抽取值。
+someObject = { a: 'value for a', b: 'value for b' }
+{ a, b } = someObject
+console.log "a is '#{a}', b is '#{b}'"
+
+CoffeeScript中的do关键字能够让我们立即运行函数,这是一种非常有效的包装作用域和受
+保护变量的方式。
