@@ -1,3 +1,5 @@
 1, 如果你想你的模块是一个特定的类型就用Module.exports。如果你想的模块是一个典型的“实例化对象”就用exports。
 
 2, 使用node-inspector调试nodejs
+
+3, 对node_modules目录的搜索都是逐层往上而不是逐层往下进行的，然后在第一次找到需要的模块后停止在所在的目录。
