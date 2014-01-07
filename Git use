@@ -31,3 +31,5 @@
                     不加hard 只是取消commit ,文件内容不改变
             
 13， git checkout -- a.txt 取消掉文件修改
+
+14
