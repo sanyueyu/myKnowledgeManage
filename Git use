@@ -1,1 +1,33 @@
 1, 好像要在远程新建一个rep才能push过去(其中要先pull下来它)
+
+2, git init 初始化
+
+3，git status 当前工作目录状态
+          untracked git未跟踪目录
+          change to be commited 缓存区
+          modified 修改的缓存区文件
+
+4， git diff ---- add 前的文件
+              |
+              --- add 后的文件
+      其中的a,b等代表同一文件的不同状态
+      git diff 输出处于modified的修改
+      git diff --cached 比较add前和add前前的文件改动
+      
+5, git commit -m ‘’   创建一个版本/提交
+
+7，sudo update-alternative --config editor 改变shell默认编辑器
+
+8, git log 查看历史 commit
+
+9, git config --global 对所有项目有效
+
+10， git diff 761as..98fss 和 git log -p 比较两次commit
+
+11, git revert HEAD 回到现在所在的commit 
+     再git log 后发现多了一次提交，其本质是反过来commit 
+
+12, git reset HEAD^ --hard 回到上一次提交状态
+                    不加hard 只是取消commit ,文件内容不改变
+            
+13， git checkout -- a.txt 取消掉文件修改
