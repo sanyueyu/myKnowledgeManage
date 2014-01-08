@@ -31,5 +31,30 @@
                     不加hard 只是取消commit ,文件内容不改变
             
 13， git checkout -- a.txt 取消掉文件修改
+          git checkout 取消更改的内容，不改变commit
+ 
+14, git branch develop 新建develop分支
 
-14
+15, git merge develop 合并分支
+          如果出现confict ----》可以删除>>> <<<< ----> 然后正常add和commit
+          
+16, git log -graph 查看分支及合并
+
+17， 搭建git服务器
+          ---1 mkdir project.git
+          ---2 git init --bare 只有裸仓库才能做服务器，数据存储到object中
+          ---3 git remote add origin /project.git
+          
+18, git branch -a 查看所有分支
+
+19， git push -u origin master
+          第一次用，配置check的关系
+
+20， git fetch 将pull到本地但是并不合并
+          如查看 git diff orgin/master
+          合并 git merge orign/master
+          合并后 fast-froward 有parent关系，git log不会显示merge
+          
+21， git cherry-pick 仅仅将一个分支上的改动添加到另一个分支上。
+
+
