@@ -68,4 +68,5 @@ var checkCommand = checker(validator("must be a map", aMap));
 checkCommand({}); //=>true
 chdckCommand(42); //=> ["must be a map"]
 
-
+7 把一个对象数组转化为一个对象
+model = _.extend.apply null, arr
