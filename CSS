@@ -112,5 +112,6 @@ visibility: hidden;
 * html .clearfix {height: 1%;}
 /* End hide from IE-mac */   
     
-    
+26, CSS3的animation类似于transition属性，他们都是随着时间改变元素的属性值。他们主要区别是transition需要触发一个事件(hover事件或click事件等)才会随时间改变其css属性；
+
     
