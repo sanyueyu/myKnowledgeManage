@@ -1,0 +1,2 @@
+1 d3要记住的是，选定的元素append一个新元素之后，变量变为那个加入的新元素，和jquery很大的不同，但疼几次了
+2 理解数据绑定（insert update remove）
