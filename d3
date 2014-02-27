@@ -23,3 +23,30 @@ function chart() {
 
   return my;
 }
+
+4 d3的data(dataset, key)中的key函数，是一个映射。。。如下：
+var dataset = [
+        {a: 1},
+        {a: 4, b: 123},
+        {a: 2},
+        {a: 3, b: 456}
+    ];
+
+    var svg = d3.select("body")
+            .append("svg")
+            .append("g");
+
+    var bars = svg.selectAll("rect")
+            .data(dataset, function(d, i) {
+                return d.a;
+            })
+            .enter()
+            .append("rect")
+            .text(function(d, i) {
+                console.log(d)
+                return d.a;
+            });
+    bars.data(dataset.slice(1), function(d) {return d.a}).exit()
+            .remove();
+            
+  可以去掉key函数看看效果，就完全明白了。
