@@ -70,3 +70,27 @@ chdckCommand(42); //=> ["must be a map"]
 
 7 把一个对象数组转化为一个对象
 model = _.extend.apply null, arr
+
+8 function isPrime( num ) {
+  if ( isPrime.cache[ num ] != null )
+    return isPrime.cache[ num ];
+  
+  var prime = num != 1; // Everything but 1 can be prime
+  for ( var i = 2; i < num; i++ ) {
+    if ( num % i == 0 ) {
+      prime = false;
+      break;
+    }
+  }
+ 
+  isPrime.cache[ num ] = prime
+ 
+  return prime;
+}
+
+isPrime.cache = {};
+
+assert( isPrime(5), "Make sure the function works, 5 is prime." );
+assert( isPrime.cache[5], "Make sure the answer is cached." );
+
+备忘模式，关键javascript的函数和对象是非常相似的
