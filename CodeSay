@@ -94,3 +94,16 @@ assert( isPrime(5), "Make sure the function works, 5 is prime." );
 assert( isPrime.cache[5], "Make sure the answer is cached." );
 
 备忘模式，关键javascript的函数和对象是非常相似的
+
+9 数组去重，非常具有借鉴意义
+function delrep4() {
+    var n = []
+
+    this.sort()
+    n.push(this[0])
+    this.forEach(function(v) {
+        if (v !== n[0])
+            n.unshift(v)
+    })
+    return n
+}
