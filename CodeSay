@@ -124,3 +124,25 @@ Array.prototype.delrep = function(fun) {
         });
         return newArr;
     };
+    
+10, memory function
+Function.prototype.memoized = function(key) {
+    this._value = this._value || {};
+    return this._value[key] !== undefined ?
+        this._value[key] :
+        this._value[key] = this.appley(this, arguments);
+};
+
+11, partial function
+Function.prototype.partial = function() {
+    var fn = this, args = Array.prototype.slice.call(arguments);
+    return function() {
+        var arg = 0;
+        for(var i = 0; i < args.length && arg < arguments.length; i++) {
+            if(arg[i] === undefined) {
+                args[i] = arguments[arg++]
+            }
+        }
+        return fn.apply(this, args);
+    };
+};
