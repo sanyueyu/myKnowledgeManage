@@ -17,3 +17,8 @@
 6, i 执行不区分大小写的匹配
    g 执行全局匹配,即找到所有匹配, 而不是在找到第一个之后就停止
    m 多行匹配模式
+7, 数字加逗号
+function numberWithCommas(x) {
+  x = x || 0;
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
