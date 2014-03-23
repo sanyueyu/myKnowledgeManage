@@ -200,3 +200,6 @@ var f = (function(){
       var a, b;
       a = b = 0;
    }
+
+30 d=判断某个方法是否存在
+ !!window.JSON //true
