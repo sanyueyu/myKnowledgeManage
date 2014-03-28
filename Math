@@ -1,0 +1,11 @@
+1, 计算一个数字的位数函数
+function cal（）{
+  return   return -Math.floor(Math.log(value) / Math.LN10 + .01);
+}
+
+原理：对数换底公式  　　logaN=(logmN)/(logma)
+
+其他对数公式温故：
+　　①loga(MN)=logaM+logan； 
+　　②loga(M/N)=logaM－logaN； 
+　　③对logaM中M的n次方有=nlogaM；
