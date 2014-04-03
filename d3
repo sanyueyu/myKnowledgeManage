@@ -50,3 +50,6 @@ var dataset = [
             .remove();
             
   可以去掉key函数看看效果，就完全明白了。
+  
+5 图片由中心变大公式
+transform="translate( -centerX*(factor-1), -centerY*(factor-1) ) scale(factor)"
