@@ -46,3 +46,16 @@ console.log "a is '#{a}', b is '#{b}'"
 
 CoffeeScript中的do关键字能够让我们立即运行函数,这是一种非常有效的包装作用域和受
 保护变量的方式。
+
+4 在JavaScript中使用if来做null检查是很常见的,但是其中有几个陷阱,空字符串和零都被
+强制转化为false,这往往会让你犯错。CoffeeScript存在操作符?只会在变量为null或者
+undefined的时候会返回真,与Ruby的nil?类似。
+praise if brian?
+你还能用它来替换||操作符:
+velocity = southern ? 40
+如果你在访问属性之前进行null检查,你可以把存在操作符放在它左边来跳过检查。这与
+Actice Support的try方法比较类似。CoffeeScript小书
+blackKnight.getLegs()?.kick()
+你能够用同样的方法检查一个属性是否是函数,是否可以调用,把存在操作符放在括号之前
+就行。如果属性不存在,或者不是一个函数,则就不会被调用。
+blackKnight.getLegs().kick?()
