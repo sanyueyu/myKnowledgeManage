@@ -22,3 +22,27 @@ function numberWithCommas(x) {
   x = x || 0;
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+8, 关注replace以函数为参数， demo:
+foo=1&foo=2&blah=a&blah=b&foo=3 =====>  foo=1,2,3&blah=a,b
+function compress(source) {
+  var keys = {};
+  
+  source.replace(/([^=&]+)=([^&]*)/g, function(full, key, value) {
+    keys[key] = (keys[key] ? key[key] + "," : "") + value;
+    return "";
+  });
+  
+  var result = [];
+  for(var key in keys) {
+    result.push(key + "=" + keys[key]);
+  }
+  
+  return result.join("&");
+}
+
+compress("foo=1&foo=2&blah=a&blah=b&foo=3");
+
+解释一下，key代表第一个括号中的内容，value代表第二个括号中的内容。
+上面公式暂时是错的
+
