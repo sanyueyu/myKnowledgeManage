@@ -1,0 +1,13 @@
+1 JS冒泡排序
+ var numbers = [3,54,2,5,1,67,123,3,54];
+var i, j, temp, len = numbers.length;
+for(i = 0; i < len - 1; i++) {
+  for(j = i + 1; j < len; j++) {
+    if(numbers[i] > numbers[j]) {
+      temp = numbers[i];
+      numbers[i] = numbers[j];
+      numbers[j] = temp;
+    }
+  }
+}
+console.dir(numbers); //效率太低了，直接被其他排序KO
