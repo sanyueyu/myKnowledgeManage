@@ -14,6 +14,8 @@
       git diff 输出处于modified的修改
       git diff --cached 比较add前和add前前的文件改动
       
+      取消add   git rm --cached
+      
 5, git commit -m ‘’   创建一个版本/提交
 
 7，sudo update-alternative --config editor 改变shell默认编辑器
