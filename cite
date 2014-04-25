@@ -1,0 +1,703 @@
+
+Ten Javascript Tools Everyone Should Have
+
+Filed: Sun, Mar 04 2007 under Programming|| Tags: toolbox javascript popular list
+Javascript frameworks have exploded on the scene over the last few years but they're no replacement for a good toolbox: those little snippets of code you seem to include in every single project. Here's my list of 10 essential Javascript tools everyone should have at their fingertips!
+
+#0 - Trim.
+
+Trim is one of the things that leave you scratching your head wondering why it was never included in the language to begin with. Thanks to prototyping however it's fairly easy to make up for the original oversight.
+
+String.prototype.trim = function() {
+
+   return this.replace(/^\s+|\s+$/g,"");
+
+}
+
+String.prototype.ltrim = function() {
+
+   return this.replace(/^\s+/g,"");
+
+}
+
+String.prototype.rtrim = function() {
+
+   return this.replace(/\s+$/g,"");
+
+}
+Usage…
+
+var test = "   Test   ";
+
+var test1 = test.ltrim();   // returns "Test   "
+
+var test2 = test.rtrim();   // returns "   Test"
+
+var test3 = test.trim();    // returns "Test"
+Trim is so common that it's pretty much a freebie on any Javascript list so we'll count this as zero and give you ten more.
+
+#1 - Numeric Sort.
+
+Javascript's Array object has a sort() method, and a pretty quick and fast one at that. Unfortunately, by default, it only sorts alphabetically. Which means if you pass it an array of numbers it will sort the array alphabetically instead of numerically (1,15,100,2,25,200 instead of 1,2,15,25,100,200). This is easy enough to fix however by adding a new method called sortNum which will sort a numerical array very nicely.
+
+Array.prototype.sortNum = function() {
+
+   return this.sort( function (a,b) { return a-b; } );
+
+}
+Usage…
+
+var tmp = [5,9,12,18,56,1,10,42,30,7,97,53,33,35,27];
+
+    tmp=tmp.sortNum(); // returns 1,5,7,9,10,12,18,27,30,33,35,42,53,56,97 
+#2 - Formatting Numbers
+
+Formatting a number with commas is an all-too-often needed ability which is not a part of the core language. Here's a short and sweet tool that will correct that deficiency and another function to revert the formatted string back into a usable number. Simply supply a number and an optional prefix ('$' for example) and get back a formatted (or unformatted) string.
+
+function formatNumber(num,prefix){
+
+   prefix = prefix || '';
+
+   num += '';
+
+   var splitStr = num.split('.');
+
+   var splitLeft = splitStr[0];
+
+   var splitRight = splitStr.length > 1 ? '.' + splitStr[1] : '';
+
+   var regx = /(\d+)(\d{3})/;
+
+   while (regx.test(splitLeft)) {
+
+      splitLeft = splitLeft.replace(regx, '$1' + ',' + '$2');
+
+   }
+
+   return prefix + splitLeft + splitRight;
+
+}
+
+
+
+function unformatNumber(num) {
+
+   return num.replace(/([^0-9\.\-])/g,'')*1;
+
+}
+Usage…
+
+var test1 = formatNumber('5123456789.25'); // returns 5,123,456,789.25
+
+var test2 = formatNumber(1234.15,'$');     // returns $1,234.15
+
+var test3 = unformatNumber('$1,234.15');   // returns 1234.15
+#3 - Search an Array
+
+A frequent task involving arrays is to actually find some data stored there. Javascript has no built in function to search an array but we can create a prototype to work around the omission.
+
+For some strange, inexplicable reason, most published array searches simply return true if they find what you're looking for. When I wrote my array search prototype I had it return false if the search item wasn't found; but if the item (or items) were found, instead of true I just returned an array of the indexes where the search term was found. False is false, but an array of indexes is also truthy so you can use the indexes you get back -- or not -- and still get the same end-results as the true functions that spawned this prototype.
+
+if (someArray.find('hello world!')) {
+
+  alert('we found hello world!');
+
+} else {
+
+  alert('hello world was not found');
+
+}
+Indeed, I found it so useful to be able to search on strings and numbers that I adapted the function so it could even accept a regular expression. If your array contains a mix of strings and numbers, be aware that '35' is different from 35, both in the Array and when you call the find method. If you would like '35' and 35 to be interchangeable in your search results change (this[i]===searchStr) to (this[i]==searchStr) -- remove one equal sign so that there are only two instead of three.
+
+Array.prototype.find = function(searchStr) {
+
+  var returnArray = false;
+
+  for (i=0; i<this.length; i++) {
+
+    if (typeof(searchStr) == 'function') {
+
+      if (searchStr.test(this[i])) {
+
+        if (!returnArray) { returnArray = [] }
+
+        returnArray.push(i);
+
+      }
+
+    } else {
+
+      if (this[i]===searchStr) {
+
+        if (!returnArray) { returnArray = [] }
+
+        returnArray.push(i);
+
+      }
+
+    }
+
+  }
+
+  return returnArray;
+
+}
+Usage…
+
+var tmp = [5,9,12,18,56,1,10,42,'blue',30, 7,97,53,33,30,35,27,30,'35','Ball', 'bubble'];
+
+//         0/1/2 /3 /4/5 /6 /7     /8  /9/10/11/12/13/14/15/16/17/  18/    19/      20
+
+var thirty=tmp.find(30);             // Returns 9, 14, 17
+
+var thirtyfive=tmp.find('35');       // Returns 18
+
+var thirtyfive=tmp.find(35);         // Returns 15
+
+var haveBlue=tmp.find('blue');       // Returns 8
+
+var notFound=tmp.find('not there!'); // Returns false
+
+var regexp1=tmp.find(/^b/);          // returns 8,20    (first letter starts with b)
+
+var regexp1=tmp.find(/^b/i);         // returns 8,19,20 (same as above but ignore case)
+#4 - HTML Entities
+
+The need to escape HTML control characters (&, <, > ) is a relatively new wrinkle in web-design, but with the ability for web pages to reach out and grab RSS newsfeeds directly from the source instead of a proxy, there comes a need to format the data in a way which will prevent uncontrolled HTML from being displayed on your pages. All this function does is take a string and covert &, <, and > to their respective HTML escape codes.
+
+String.prototype.htmlEntities = function () {
+
+   return this.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+};
+Usage…
+
+var tmp = '<html><head></head>';
+
+var safe= tmp.htmlEntities(); // Returns “&lt;html&gt;&lt;head&gt;&lt;/head&gt;”
+Additionally it's often useful just to remove HTML tags entierly (this has the added bonus of removing advertisements in most RSS feeds).
+
+String.prototype.stripTags = function () {
+
+   return this.replace(/<([^>]+)>/g,'');
+
+}
+Usage…
+
+var tmp = '<a href="htpp://somespammer.com">Some Link</a>';
+
+var safe= tmp.stripTags(); // Returns “Some Link”;
+#5 - Is it an object, or is it an Array?
+
+Finding out if an Array is, well, an Array is actually a non-trivial task in Javascript. It's one of those things that lurks in the shadow waiting to pounce when you finally need to make that determination. The code is so light-weight that it's worth keeping in your toolbox if as nothing more than a virtual rabbits foot.
+
+All due credit to Douglas Crockford for providing the foundation of this little gem.
+
+function isArray(testObject) {   
+
+    return testObject && !(testObject.propertyIsEnumerable('length')) && typeof testObject === 'object' && typeof testObject.length === 'number';
+
+}
+Usage…
+
+var tmp = [5,9,12,18,'blue',30,7,97,53,33,30,35,27,30];
+
+var tmp2 = {0:5,1:9,2:12}
+
+
+
+test1 = isArray(tmp);    // returns true
+
+test2 = isArray(tmp2);   // returns false;
+Jeff Emminger dropped me an email with the following suggestion…
+
+…just for fun, here's a little shorter version of isArray():
+
+Object.prototype.isArray = function() {
+
+   return this.constructor == Array;
+
+}
+and it's attached to all objects, so you can call it like so:
+
+alert( [].isArray() ); // true
+
+alert( {}.isArray() ); // false
+#6 - Cookies!
+
+Cookies are a fact of life on the Web and the tools javascript gives you to work with them are woefully inadequate. There are however, 4 simple functions which will let you work with cookies almost as easily as working with a variable.
+
+function cookiesAllowed() {
+
+   setCookie('checkCookie', 'test', 1);
+
+   if (getCookie('checkCookie')) {
+
+      deleteCookie('checkCookie');
+
+      return true;
+
+   }
+
+   return false;
+
+}
+
+
+
+function setCookie(name,value,expires, options) {
+
+   if (options===undefined) { options = {}; }
+
+   if ( expires ) {
+
+      var expires_date = new Date();
+
+      expires_date.setDate(expires_date.getDate() + expires)
+
+   }
+
+   document.cookie = name+'='+escape( value ) +
+
+      ( ( expires ) ? ';expires='+expires_date.toGMTString() : '' ) + 
+
+      ( ( options.path ) ? ';path=' + options.path : '' ) +
+
+      ( ( options.domain ) ? ';domain=' + options.domain : '' ) +
+
+      ( ( options.secure ) ? ';secure' : '' );
+
+}
+
+
+
+function getCookie( name ) {
+
+   var start = document.cookie.indexOf( name + "=" );
+
+   var len = start + name.length + 1;
+
+   if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) ) {
+
+      return null;
+
+   }
+
+   if ( start == -1 ) return null;
+
+   var end = document.cookie.indexOf( ';', len );
+
+   if ( end == -1 ) end = document.cookie.length;
+
+   return unescape( document.cookie.substring( len, end ) );
+
+}
+
+
+
+function deleteCookie( name, path, domain ) {
+
+   if ( getCookie( name ) ) document.cookie = name + '=' +
+
+      ( ( path ) ? ';path=' + path : '') +
+
+      ( ( domain ) ? ';domain=' + domain : '' ) +
+
+      ';expires=Thu, 01-Jan-1970 00:00:01 GMT';
+
+}
+Usage…
+
+// Check if cookies are allowed in this browser.
+
+if cookiesAllowed() { 
+
+  alert('you can set cookies');
+
+} else {
+
+  alert("This browser doesn't allow cookies.");
+
+}
+
+// Create a cookie named myCookie with a value of 'Peanut Butter'
+
+// The cookie will expire in 10 days.
+
+setCookie('myCookie','Peanut Butter', 10);
+
+
+
+// Retreive the value of 'myCookie'
+
+var userCookie = getCookie('myCookie');
+
+
+
+// Delete 'myCookie'
+
+deleteCookie('myCookie');       
+Explaining how and why these functions work are a bit beyond the scope of this article. If you need documentation for these functions please check out this article on HTTP cookies.
+
+#7 - Function Mapping
+
+While it's easy enough to write a function to go through each element of an array, it's often easier and makes more sense to have the array call a specific function for each of its elements. This time-saving little trick comes in handy more often than you would think. Here we'll just create a map prototype which accepts a function you want each element of the array passed through. It will return an array with the processed values.
+
+Array.prototype.map = function(f) {
+
+  var returnArray=[];
+
+  for (i=0; i<this.length; i++) {
+
+    returnArray.push(f(this[i]));
+
+  }
+
+  return returnArray;
+
+}
+Usage…
+
+function trim(str) {
+
+  return str.replace(/^\s+|\s+$/g,'');
+
+}
+
+
+
+var tmp = ['now', 'is', '   the   ', 'time    ', '    for ',  ' all', ' good ', '   men   '];
+
+var test = tmp.map(trim);  // returns now,is,the,time,for,all,good,men
+#8 - Controling Stylesheets
+
+Web designers have been controlling HTML styles with javascript for nearly a decade now. But altering and modifying the stylesheets themselves has remained a bit of a mystery. With the right tools in your toolbox though, controlling stylesheet rules are as easy as applying styles to an object you retrieved with getElementById or getElementsbyTagName. What this means is that you can disable all of your forms and form elements with just a few lines of code, or reactivate them, or change the layout of your entire page, on the fly, in real time.
+
+These are just the tools, if you'd like the documentation check out the associated article.
+
+function getCSSRule(ruleName, deleteFlag) {
+
+   ruleName=ruleName.toLowerCase(); 
+
+   if (document.styleSheets) {      
+
+      for (var i=0; i<document.styleSheets.length; i++) { 
+
+         var styleSheet=document.styleSheets[i];
+
+         var ii=0;                              
+
+         var cssRule=false;                      
+
+         do {                                   
+
+            if (styleSheet.cssRules) {          
+
+               cssRule = styleSheet.cssRules[ii];
+
+            } else {                             
+
+               cssRule = styleSheet.rules[ii];    
+
+            }                                    
+
+            if (cssRule)  {                      
+
+               if (cssRule.selectorText.toLowerCase()==ruleName) { 
+
+                  if (deleteFlag=='delete') {    
+
+                     if (styleSheet.cssRules) {  
+
+                        styleSheet.deleteRule(ii);
+
+                     } else {                     
+
+                        styleSheet.removeRule(ii);
+
+                     }                            
+
+                     return true;                 
+
+                  } else {                        
+
+                     return cssRule;              
+
+                  }                               
+
+               }                                  
+
+            }                                     
+
+            ii++;                                 
+
+         } while (cssRule)                        
+
+      }                                           
+
+   }                                              
+
+   return false;                                  
+
+}                                                  
+
+
+
+function killCSSRule(ruleName) {     
+
+  return getCSSRule(ruleName,'delete');  
+
+}                                         
+
+
+
+function addCSSRule(ruleName) {       
+
+  if (document.styleSheets) {        
+
+    if (!getCSSRule(ruleName)) {    
+
+      if (document.styleSheets[0].addRule) {       
+
+        document.styleSheets[0].addRule(ruleName, null,0);
+
+      } else {                   
+
+        document.styleSheets[0].insertRule(ruleName+' { }', 0);
+
+      }        
+
+    }           
+
+  }              
+
+  return getCSSRule(ruleName);   
+
+} 
+Usage…
+
+// returns the object for the CSS class "fancyStyle"      
+
+fancyStyleObject=getCSSRule('fancyStyle');
+
+// applies underline to the fancyStyle class. 
+
+fancyStyleObject.style.textDecoration='underline'
+
+
+
+// Deletes the class "fancyStyle" unstyling any objects that used it. 
+
+killCSSRule('fancyStyle');
+
+
+
+// Creates a new stylesheet rule (P for paragraphs in this instance)
+
+newStyle=addCSSRule('p');
+
+// Gives all paragraphs blue text.
+
+newStyle.style.color='blue';
+
+
+
+// creates a new CSS class called fancyStyle.
+
+newStyle=addCSSRule('.fancyStyle');
+
+// Gives all objects with a class of fancyStyle a green background.  
+
+newStyle.backgroundColor='green';
+#9 - getElementsByClassName
+
+It's coming. In the next version of Firefox, getElementsByClassName will be added (and quite possibly in IE8 as well) and is part of a working draft by a group which makes recommendations to the standards body. Until that day, however, the following prototype will let you retrieve elements by class the same way you do it with getElementsByTagName and getElementById. Note that the name is left getElementsByClass so as not to interfere with the upcoming getElementsByClassName addition in newer browsers.
+
+Object.prototype.getElementsByClass = function (searchClass, tag) {      
+
+   var returnArray = [];
+
+   tag = tag || '*';
+
+   var els = this.getElementsByTagName(tag);
+
+   var pattern = new RegExp('(^|\\s)'+searchClass+'(\\s|$)');
+
+   for (var i = 0; i < els.length; i++) {
+
+      if ( pattern.test(els[i].className) ) {
+
+         returnArray.push(els[i]);
+
+      }
+
+   }
+
+   return returnArray;
+
+}
+Usage…
+
+// returns all objects with a class name of "fancyStyle"
+
+els=document.getElementsByClass('fancyStyle');
+
+// returns all the objects with a class name of "fancyStyle" for paragraphs
+
+els=document.getElementsByClass('fancyStyle','p');
+#10 - AJAX
+
+Any toolbox that doesn't have at least a bare-bones AJAX routine in it isn't worthy of the name toolbox. So here's a basic AJAX object that will allow for concurrent AJAX requests in a nice, tight little package.
+
+function ajaxObject(url, callbackFunction) {
+
+  var that=this;      
+
+  this.updating = false;
+
+  this.abort = function() {
+
+    if (that.updating) {
+
+      that.updating=false;
+
+      that.AJAX.abort();
+
+      that.AJAX=null;
+
+    }
+
+  }
+
+  this.update = function(passData,postMethod) { 
+
+    if (that.updating) { return false; }
+
+    that.AJAX = null;                          
+
+    if (window.XMLHttpRequest) {              
+
+      that.AJAX=new XMLHttpRequest();              
+
+    } else {                                  
+
+      that.AJAX=new ActiveXObject("Microsoft.XMLHTTP");
+
+    }                                             
+
+    if (that.AJAX==null) {                             
+
+      return false;                               
+
+    } else {
+
+      that.AJAX.onreadystatechange = function() {  
+
+        if (that.AJAX.readyState==4) {             
+
+          that.updating=false;                
+
+          that.callback(that.AJAX.responseText,that.AJAX.status,that.AJAX.responseXML);        
+
+          that.AJAX=null;                                         
+
+        }                                                      
+
+      }                                                        
+
+      that.updating = new Date();                              
+
+      if (/post/i.test(postMethod)) {
+
+        var uri=urlCall+'?'+that.updating.getTime();
+
+        that.AJAX.open("POST", uri, true);
+
+        that.AJAX.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        that.AJAX.send(passData);
+
+      } else {
+
+        var uri=urlCall+'?'+passData+'&timestamp='+(that.updating.getTime()); 
+
+        that.AJAX.open("GET", uri, true);                             
+
+        that.AJAX.send(null);                                         
+
+      }              
+
+      return true;                                             
+
+    }                                                                           
+
+  }
+
+  var urlCall = url;        
+
+  this.callback = callbackFunction || function () { };
+
+}
+Usage…
+
+// Just a stub function we'll tell ajaxObject to call when it's done
+
+// callback functions get responseText, and responseStat respectively
+
+// in their arguments.
+
+function fin(responseTxt,responseStat) {
+
+  alert(responseStat+' - '+responseTxt);
+
+}
+
+
+
+// create a new ajaxObject, give it a url it will be calling and
+
+// tell it to call the function "fin" when its got data back from the server.
+
+var test1 = new ajaxObject('http://someurl.com/server.cgi',fin);
+
+    test1.update();
+
+                
+
+// create a new ajaxObject, give it a url and tell it to call fin when it
+
+// gets data back from the server.  When we initiate the ajax call we'll
+
+// be passing 'id=user4379' to the server.              
+
+var test2 = new ajaxObject('http://someurl.com/program.php',fin);
+
+    test2.update('id=user4379');
+
+                
+
+// create a new ajaxObject but we'll overwrite the callback function inside
+
+// the object to more tightly bind the object with the response hanlder.
+
+var test3 = new ajaxObject('http://someurl.com/prog.py', fin);
+
+    test3.callback = function (responseTxt, responseStat) {
+
+      // we'll do something to process the data here.
+
+      document.getElementById('someDiv').innerHTML=responseTxt;
+
+    }
+
+    test3.update('coolData=47&userId=user49&log=true'); 
+
+                
+
+// create a new ajaxObject and pass the data to the server (in update) as
+
+// a POST method instead of a GET method.
+
+var test4 = new ajaxObject('http://someurl.com/postit.cgi', fin);
+
+    test4.update('coolData=47&userId=user49&log=true','POST');  
