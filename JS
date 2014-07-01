@@ -204,6 +204,7 @@ var f = (function(){
 30 d=判断某个方法是否存在
  !!window.JSON //true
  
+ 
 31 AOP面向且面编程
 var origDoSomething = thing.doSomething;
 
@@ -213,3 +214,6 @@ thing.doSomething = function() {
 
     return origDoSomething.apply(this, arguments);
 }
+
+32 JSON.stringify(value [, replacer] [, space]) 
+关注后面两个参数 ，挺有用的
