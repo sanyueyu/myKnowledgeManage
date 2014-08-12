@@ -146,3 +146,12 @@ Function.prototype.partial = function() {
         return fn.apply(this, args);
     };
 };
+
+12，上传图品preview
+img.src = window.URL.createObjectURL(files[i]);
+上传文件转码
+var reader = new FileReader()
+      reader.onload = function(res){
+        input.value = res.target.result;
+      };
+      reader.readAsDataURL(files[i]);
