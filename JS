@@ -217,3 +217,12 @@ thing.doSomething = function() {
 
 32 JSON.stringify(value [, replacer] [, space]) 
 关注后面两个参数 ，挺有用的
+
+33 keypress,keydown,keyup
+触发顺序 keydown -> keypress -> keyup
+大部分情况下keypress和keydown动作类似，但keypress不能捕获组合键
+jquery下捕获全局按键enter事件用法：
+$(document).on("keypress", function(e) {
+  var code = e.keyCode || e.which
+  if (code == 13) alert("enter click");
+});
