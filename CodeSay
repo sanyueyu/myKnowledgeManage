@@ -155,3 +155,13 @@ var reader = new FileReader()
         input.value = res.target.result;
       };
       reader.readAsDataURL(files[i]);
+
+13, 判断一个对象是否为{}
+function objectIsEmpty(obj) {
+  for(var name in obj) {
+    if (obj.hasOwnProperty(name)) {
+      return false;
+    }
+  }
+  return true;
+}
