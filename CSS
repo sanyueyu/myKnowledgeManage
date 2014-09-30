@@ -130,3 +130,10 @@ visibility: hidden;
 margin-left:-12px; padding-left: 12px 
 margin-right: -12px; padding-right: 12px
 一般用来元素位置不变的情况下，增大padding,例如增大背景图的显示等
+
+29 scss构建整个站点页面框架构想：
+文件布局：global.scss(全局引入文件引入./bass下的所有东西)，./bass（放置_var.scss,_mixin.scss,_normal.scss,_resp.scss...）,..
+以页面中每一个小模块为一个nest
+main.scss为主css 由上到下 layout -> 个个模块 （写注释）
+
+
