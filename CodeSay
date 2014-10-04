@@ -165,3 +165,5 @@ function objectIsEmpty(obj) {
   }
   return true;
 }
+
+14, 错误分系统错误和程序错误，其中程序错误就是bug
