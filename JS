@@ -235,3 +235,9 @@ $(document).on("keypress", function(e) {
   3.定时器的处理函数没有及时释放，没有调用clearInterval方法；
 
   4.视图层有些控件重复添加，没有移除。
+
+35 js中的null和undefined(解释挺有趣的)
+1， typeof on null returns the string "object". 
+However, MDN's reference says this is a bug in ECMAScript.
+
+2，undefined === window.undefined; // true
