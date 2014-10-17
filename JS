@@ -241,3 +241,9 @@ $(document).on("keypress", function(e) {
 However, MDN's reference says this is a bug in ECMAScript.
 
 2，undefined === window.undefined; // true
+
+36 判断空对象函数，挺简练的
+  isEmpty = function(obj) {
+    for(i in obj) return false;
+    return true;
+  }
