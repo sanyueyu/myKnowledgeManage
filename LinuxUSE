@@ -64,3 +64,5 @@ lha请到：http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/下载！
 .tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea
 解压：sEx x FileName.*
 压缩：sEx a FileName.* FileName
+
+2 cd 空格 tab 能很快列出目录下的所有文件，很方便
