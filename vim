@@ -87,3 +87,5 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
 22 shift + o 前面加一行
 
 23 easy jumping up/down braces with Shift { and Shift }
+ 
+24 Use Shift+J to join two lines together
