@@ -136,4 +136,4 @@ margin-right: -12px; padding-right: 12px
 以页面中每一个小模块为一个nest
 main.scss为主css 由上到下 layout -> 个个模块 （写注释）
 
-
+30 css命名 .[namespace][-ComponentName][_ComponentSection][-variant-flag]
