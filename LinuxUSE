@@ -66,3 +66,6 @@ lha请到：http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/下载！
 压缩：sEx a FileName.* FileName
 
 2 cd 空格 tab 能很快列出目录下的所有文件，很方便
+
+3 命令行 alt 加左右 移动一个单词
+  command 加左右 移动到前后
