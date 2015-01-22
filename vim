@@ -89,3 +89,5 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
 23 easy jumping up/down braces with Shift { and Shift }
  
 24 Use Shift+J to join two lines together
+
+25 vip 选择整个段落
