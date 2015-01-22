@@ -81,4 +81,9 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
     `.              此命令相当强大, 它移动光标到上一次的修改点.
 20, 单词替换 vep
 
+
 21 zf折叠 zo展开
+
+22 shift + o 前面加一行
+
+23 easy jumping up/down braces with Shift { and Shift }
