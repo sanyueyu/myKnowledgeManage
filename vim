@@ -91,3 +91,5 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
 24 Use Shift+J to join two lines together
 
 25 vip 选择整个段落
+
+26 ctrl + p 快速搜索打开文件
