@@ -93,3 +93,5 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
 25 vip 选择整个段落
 
 26 ctrl + p 快速搜索打开文件
+
+27 vim 改文件编码 命令是 :set fileencoding=utf-8
