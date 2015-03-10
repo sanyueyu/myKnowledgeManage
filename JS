@@ -247,3 +247,9 @@ However, MDN's reference says this is a bug in ECMAScript.
     for(i in obj) return false;
     return true;
   }
+37 判断页面是否被嵌入到 iframe框架中
+if (window === top) {
+  不是
+}else{
+  被嵌入啦                                  
+}
