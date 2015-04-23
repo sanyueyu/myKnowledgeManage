@@ -59,4 +59,8 @@
           
 21， git cherry-pick 仅仅将一个分支上的改动添加到另一个分支上。
 
+22, rebase 导致内容丢失，拯救办法
+git reflog
+# Suppose the old commit was HEAD@{5} in the ref log
+git reset --hard HEAD@{5}
 
