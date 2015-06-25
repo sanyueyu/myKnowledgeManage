@@ -1,0 +1,1 @@
+1, karma start 启动一直不能打开chrome ,解决：sudo tnpm install karma-cli 
