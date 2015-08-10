@@ -253,3 +253,18 @@ if (window === top) {
 }else{
   被嵌入啦                                  
 }
+38 两次test不一样
+今天碰到一个问题，使用RegExp对象对同一个字符串执行两次test方法，返回的测试结果不同。代码如下：
+var reg = /abc/g;
+var str1 = "abcde";
+console.log(reg.test(str1)); // true
+console.log(reg.test(str2)); // false
+百度搜索后得知，是因为RegExp对象每次执行完test方法后都会修改对象的lastIndex属性为上次测试符合格式的字符串的下个字符索引。
+修改代码如下所示，我们便可以清楚地知道其中的究竟。
+var reg = /abc/g;
+var str1 = "abcde";
+var str2 = "abcde";
+console.log(reg.lastIndex); // 0
+console.log(reg.test(str1)); // true
+console.log(reg.lastIndex); // 3
+console.log(reg.test(str2)); // false
