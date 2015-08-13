@@ -3,3 +3,5 @@
 2, 使用node-inspector调试nodejs
 
 3, 对node_modules目录的搜索都是逐层往上而不是逐层往下进行的，然后在第一次找到需要的模块后停止在所在的目录。
+
+4, 命令里执行了sudo js里所有包的执行都是sudo 执行的，是个坑，比如：配置好ssh 执行scp是不用�加密码 但是sudo scp是需要加密码的
