@@ -9,3 +9,12 @@
 8. 查看文件编码：file filename
 9. 清屏幕：clear
 10. 查看CPU负载：top
+11. 打印环境变量：eho home
+12. 设置一个新的环境变量 export HELLO="hello" (可以无引号)
+13. 显示所有环境变量: env
+11. 显示指定命令的搜索路径：echo $path 
+12. 创建一个软链：ln -s path/to/the/target/directory name-of-symlink
+13. 查找当前可执行文件的位置：which tap
+13. 查找所有可执行文件的位置：where tap
+14. 快速查找目录下的某个文件：locate src/tap.js
+
