@@ -9,7 +9,7 @@
 8. 查看文件编码：file filename
 9. 清屏幕：clear
 10. 查看CPU负载：top
-11. 打印环境变量：eho home
+11. 打印环境变量：eho $path 
 12. 设置一个新的环境变量 export HELLO="hello" (可以无引号)
 13. 显示所有环境变量: env
 11. 显示指定命令的搜索路径：echo $path 
@@ -18,4 +18,8 @@
 13. 查找所有可执行文件的位置：where tap
 14. 快速查找目录下的某个文件：locate src/tap.js
 15. 多行输入命令,一行命令行最后加入：\ (其实反斜线符号“ \ ”在Bash中被解释为转义字符)
+1. sudo命令自动输入密码: echo 'password' | sudo -S command
+1. 增加环境变量：export PATH=$PATH:/Users/puxiu/Project/nvm/versions/node/v0.12.2/bin 
+只能暂时增加环境变量，下次启动shell又要重新添加，解决方式是把上面的文字添加
+到~/.zshrc最后一行
 
