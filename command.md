@@ -22,4 +22,5 @@
 1. 增加环境变量：export PATH=$PATH:/Users/puxiu/Project/nvm/versions/node/v0.12.2/bin 
 只能暂时增加环境变量，下次启动shell又要重新添加，解决方式是把上面的文字添加
 到~/.zshrc最后一行
+1. 下载单个文件：wget http://xxxx.com/xxx.json
 
