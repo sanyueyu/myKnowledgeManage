@@ -19,3 +19,4 @@
 
 8, 针对checkbox多选框问题，$("#toggle-all")[0]返回的才是一个原生javascript对象，$("#toggle-all")仅是jQuery对象，使其选中
    的语句是$("#toggle-all")[0].checked = true
+9. 对于display:none的元素，jquery获取其宽度为0

@@ -1,2 +1,3 @@
 ## git常用命令汇总:
 1. 恢复所有更改： git checkout .
+2. 拉取远程非master分支(先查看所有分支：git branch -a,再git co -b 新分支 远程分支)
