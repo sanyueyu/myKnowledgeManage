@@ -21,3 +21,5 @@
 ### DataFlow
 1. store.dispatch(action) --> 
 2. store will pass state tree|action to reducers --> 
+3. The root reducer may combine the output of multiple reducers into a single state tree -->
+4. The Redux store saves the complete state tree returned by the root reducer
