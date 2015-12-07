@@ -24,3 +24,4 @@
 到~/.zshrc最后一行
 1. 下载单个文件：wget http://xxxx.com/xxx.json
 
+
