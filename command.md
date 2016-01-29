@@ -24,5 +24,10 @@
 到~/.zshrc最后一行
 1. 下载单个文件：wget http://xxxx.com/xxx.json
 1. ctrl + r 然后输入你的关键字 找到匹配的关键字的那条历史命令
+1. 以admin的身份操作 sudo su admin
+1. 查看系统信息 cat /proc/version
+1. 超级权限 sudo bash -c "su - root"
+1. 建立软链接 ln -s sourcefile targetfile
+1. 建立硬链接 ln sourcefile targetfile
 
-
+npm password GHWazE0UqhUtLvZIpx2H5/jf
