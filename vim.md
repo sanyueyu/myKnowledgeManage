@@ -112,3 +112,8 @@ di"  di'  di` 删除一对引号字符 (" 或 ' 或 `) 中所有字符
 
 34 搜索 /each enter后 按n 下一个
 
+35 查找如nginx的启用路径 
+netstat -tnlp|grep nginx
+最后一行 查看进程 ps -aux |grep 进程ID
+但如果nginx没有启动 先全局搜索 find /|grep nginx.conf 在 bin目录下启动 
+
