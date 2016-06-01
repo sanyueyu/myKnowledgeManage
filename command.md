@@ -31,5 +31,6 @@
 1. 建立硬链接 ln sourcefile targetfile
 1. ps等命令再配合grep来查找进程kill，而killall把这两个过程合二为一 例如 killall node
 1. 对机器上的rails环境变量没权限 source ~/.rvm/environments/default
+1. 一行输入两个命令用；分隔
 
 npm password GHWazE0UqhUtLvZIpx2H5/jf

@@ -23,3 +23,7 @@
 2. store will pass state tree|action to reducers --> 
 3. The root reducer may combine the output of multiple reducers into a single state tree -->
 4. The Redux store saves the complete state tree returned by the root reducer
+
+### 中间件
+1. 中间件让你在每个action对象分发出去之前，注入一个自定义的逻辑来解释你的action对象。
+2. 中间件让我们能写表达更清晰的，潜在的异步action creator
