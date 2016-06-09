@@ -15,6 +15,9 @@
     2. ~/.zshrc 在末尾添加一行 export PATH=~/.npm-global/bin:$PATH 
     3. source ~/.zshrc 
     4. npm install tnpm -g --registry=http://registry.npm.alibaba-inc.com
+## Homebrew
+    1. http://brew.sh/
+    2. /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ## Docker
 
 ## vim + 解决复制问题 + 环境和插件
@@ -23,6 +26,7 @@
     3. git clone https://github.com/sanyueyu/my.vim.git ~/.vim 
     4. ln -s ~/.vim/vimrc ~/.vimrc 
     5. :BundleInstall
+    6. alias v="vim"
 ## alfred
     1. http://pan.baidu.com/s/1gfz2UiB
 ## dash
@@ -40,4 +44,6 @@
     1. http://ihosts.alibaba.net/
 ## Pomodoro Time
     1. appStore search Pomodoro Time
+## snip 
+    1. appStore search snip 
 

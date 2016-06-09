@@ -121,3 +121,6 @@ netstat -tnlp|grep nginx
    通过 brew install vim --override-system-vim用7.4版本替换本地的7.3版本
    重启命令行 OK
 
+<Leader> 默认是}旁边的\键
+
+38 vim awesome :http://vimawesome.com/
