@@ -8,3 +8,8 @@
 可以参考：如果使用字符串的内容，这个内容可能会变化，使用String
 如果使用固定的名字或者标识符，使用Symbol
 7. &操作符的含义是：这是一个Proc对象，我想把它当作代码块来使用，去掉&操作符，就能再次得到一个Proc对象
+8. ruby及rails安装：https://ruby-china.org/wiki/install_ruby_guide
+9. lambda 和 Proc的一点点区别：
+    - Proc 中return会跳出当前作用域
+    - lambda 中return不会跳出当前作用域
+
