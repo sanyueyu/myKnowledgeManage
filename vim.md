@@ -124,3 +124,4 @@ netstat -tnlp|grep nginx
 <Leader> 默认是}旁边的\键
 
 38 vim awesome :http://vimawesome.com/
+39 gf 文件间跳转，ctrl + o 跳回上一个文件
