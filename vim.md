@@ -125,3 +125,4 @@ netstat -tnlp|grep nginx
 
 38 vim awesome :http://vimawesome.com/
 39 gf 文件间跳转，ctrl + o 跳回上一个文件
+40 :reg 查看到寄存器内容，"1p 黏贴1号寄存器，其他类推
