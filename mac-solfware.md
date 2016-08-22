@@ -46,4 +46,6 @@
     1. appStore search Pomodoro Time
 ## snip 
     1. appStore search snip 
+## mysql数据管理工具 sequelpro
+    1. http://www.sequelpro.com/download
 
