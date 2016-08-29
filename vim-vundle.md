@@ -6,9 +6,10 @@
 2. 运行:BundleInstall plugin_name 安装相应插件
 3. 重点来了，尼玛还是没用，运行BundleList,检查没有相应插件
 4. 打开/Users/puxiu/.vim/bundles.vim 发现插件被注释掉了，去掉注释OK
+5. 或者插件已经安装到/bundles目录下，需要加到bundles.vim文件里
 
 ### 常用命令
-1. 打开一个vim, 安装插件运行:BundleInstall 
+1. 打开一个vim, 安装插件运行:BundleInstall
 1. 更新插件:BundleUpdate
 2. 清除不再使用的插件:BundleClean,
 3. 列出所有插件:BundleList

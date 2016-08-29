@@ -7,3 +7,12 @@
 解决办法：1，设置git大小写敏感
 2，先删除文件 git rm xxx
 再添加文件 git add xxx
+3 git commit 规范写法
+feat: a new feature
+fix: a bug fix
+docs: document change only
+style: code style change
+refactor: 重构
+test: add missing test
+chore: change to the build process
+

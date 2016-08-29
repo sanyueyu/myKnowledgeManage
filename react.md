@@ -1,6 +1,7 @@
 ## 总结
 1. 同时使用不同版本的react，使用ref的地方会报错，例如我本地使用npm react和mui/reactjs/react同时用
 1. 不能使用require去拉 ES6的类 ，报错信息非常不明确
+1. 编写组件的时候 写defaultProps和propTypes 方便排错
 
 ### 区分使用state还是prop 
 1. Is it passed in from a parent via props? If so, it probably isn't state.
