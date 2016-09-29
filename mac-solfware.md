@@ -36,7 +36,7 @@
 ## cheat
     1. sudo npm install cheat -g
 ## autojump + 防止找不到j命令
-    1. brew install autojump 
+    1. brew install autojump
     2. ~/.zshrc文件最后一行增加： [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 ## seil(改键盘51 -> 53)
     1. https://pqrs.org/osx/karabiner/seil.html
@@ -44,8 +44,10 @@
     1. http://ihosts.alibaba.net/
 ## Pomodoro Time
     1. appStore search Pomodoro Time
-## snip 
-    1. appStore search snip 
+## snip
+    1. appStore search snip
 ## mysql数据管理工具 sequelpro
     1. http://www.sequelpro.com/download
+## OmniDiskSweeperDelete
+    1. https://www.omnigroup.com/more
 
