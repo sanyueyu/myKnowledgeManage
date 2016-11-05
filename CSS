@@ -139,3 +139,4 @@ main.scss为主css 由上到下 layout -> 个个模块 （写注释）
 30 css命名 .[namespace][-ComponentName][_ComponentSection][-variant-flag]
 31 去掉hover如 background-color: initial;
 32 段落始终不换行 可能是由于white-space导致的
+强制换行： white-space：normal;word-break:break-word;
