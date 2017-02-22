@@ -33,6 +33,7 @@
 1. 对机器上的rails环境变量没权限 source ~/.rvm/environments/default
 1. 一行输入两个命令用；分隔
 1. 命令行里 “command + 双击url” 直接chrome打开url
+<<<<<<< HEAD
 1. 替换revert目录下所有字符串xx为yy，使用命令
 grep "xx" -rl revert | xargs sed -i '' "s/xx/yy/g"
 或者 sed -i '' "s/xx/yy/g" `grep xx -rl revert`
@@ -45,3 +46,8 @@ grep "xx" -rl revert | xargs sed -i '' "s/xx/yy/g"
 npm password GHWazE0UqhUtLvZIpx2H5/jf
 
 
+=======
+
+npm password GHWazE0UqhUtLvZIpx2H5/jf
+
+>>>>>>> cc4031b91a65639925722176c37016ddc99e507f

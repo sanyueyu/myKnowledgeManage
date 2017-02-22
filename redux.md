@@ -30,5 +30,9 @@
 3. 中间件提供的是位于 action 被发起之后，到达 reducer 之前的扩展点
 
 ### 技巧
+<<<<<<< HEAD
 1. redux通过props初始化state,可以通过componentWillMount里将props设置为state
+=======
+1. redux通过props初始化state,可以通过componentWillMoun里将props设置为state
+>>>>>>> cc4031b91a65639925722176c37016ddc99e507f
 2. react组件的defaultProps的属性空对象或者为空数组,将参数写到story.js里

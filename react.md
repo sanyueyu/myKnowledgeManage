@@ -25,4 +25,7 @@
 6. React.initializeTouchEvents(true);启用触控事件
 7. React 中表单是无约束组件
 8. React ReactCSSTransitionGroup 通过改变class来设置动画，class的css 自己填写
+<<<<<<< HEAD
 9. React 同名属性后面的会覆盖前面的，debug会用到
+=======
+>>>>>>> cc4031b91a65639925722176c37016ddc99e507f

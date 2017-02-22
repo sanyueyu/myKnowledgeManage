@@ -10,9 +10,12 @@
 - latest：安装最新版本
 4. npm scripts文档 https://docs.npmjs.com/misc/scripts
 - prepublish：在包发布前运行，同时也在npm install 没有参数时运行
+<<<<<<< HEAD
 5. npm 命令行传参的两种方式：
 - npm run server -- [我是参数]
 - package.json:  "start": "node ./script.js server $PORT"
   命令行：PORT=8080 npm start
 6. node 本地环境搭建知识：http://node.alibaba-inc.com/env/README.html?spm=0.0.0.0.MjP0Sv
 
+=======
+>>>>>>> cc4031b91a65639925722176c37016ddc99e507f
