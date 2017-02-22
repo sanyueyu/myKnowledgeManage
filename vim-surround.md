@@ -2,3 +2,5 @@
 - cs"' : "hello world" => 'hello world' 
 - ds"  : "hello" => hello
 - ysiw" : hello => "hello"
+- ysw(  : hello => ( hello )
+

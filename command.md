@@ -33,6 +33,15 @@
 1. 对机器上的rails环境变量没权限 source ~/.rvm/environments/default
 1. 一行输入两个命令用；分隔
 1. 命令行里 “command + 双击url” 直接chrome打开url
+1. 替换revert目录下所有字符串xx为yy，使用命令
+grep "xx" -rl revert | xargs sed -i '' "s/xx/yy/g"
+或者 sed -i '' "s/xx/yy/g" `grep xx -rl revert`
+
+1. 清空一个文件夹 cd 这个目录 rm -rf *
+1. 如果被分号(;)所分隔的命令会连续的执行下去，就算是错误的命令也会继续执行后面的命令
+1. 如果命令被 && 所分隔，那么命令也会一直执行下去，但是中间有错误的命令存在就不会执行后面的命令，没错就直行至完为止。
+1. CD到某个文件夹 cd `command1` 需要注意的是这里的`符号，被它括起来的内容将作为命令执行，执行后的结果作为command1的参数
 
 npm password GHWazE0UqhUtLvZIpx2H5/jf
+
 
