@@ -1,0 +1,1 @@
+- In python, once you have looped over all the elements of an iterator, you cannot loop over the iterator again
