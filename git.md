@@ -16,4 +16,4 @@ refactor: 重构
 test: add missing test
 chore: change to the build process
 4 拿到某个commit ： git cherry-pick logID
-
+6. 删除远程tag命令   git push --delete origin tagname
