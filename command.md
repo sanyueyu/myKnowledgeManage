@@ -33,7 +33,10 @@
 1. 对机器上的rails环境变量没权限 source ~/.rvm/environments/default
 1. 一行输入两个命令用；分隔
 1. 命令行里 “command + 双击url” 直接chrome打开url
-<<<<<<< HEAD
+1. 查看服务器系统版本：uname -a
+1. 删除某种类型的文件：find test2/ -name '*.tes' |xargs rm -rf 
+1. file ip.txt 可以查看文件编码
+1. centos install nvm :curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 1. 替换revert目录下所有字符串xx为yy，使用命令
 grep "xx" -rl revert | xargs sed -i '' "s/xx/yy/g"
 或者 sed -i '' "s/xx/yy/g" `grep xx -rl revert`
@@ -42,12 +45,14 @@ grep "xx" -rl revert | xargs sed -i '' "s/xx/yy/g"
 1. 如果被分号(;)所分隔的命令会连续的执行下去，就算是错误的命令也会继续执行后面的命令
 1. 如果命令被 && 所分隔，那么命令也会一直执行下去，但是中间有错误的命令存在就不会执行后面的命令，没错就直行至完为止。
 1. CD到某个文件夹 cd `command1` 需要注意的是这里的`符号，被它括起来的内容将作为命令执行，执行后的结果作为command1的参数
+1. 将命令行输出内容到一个本地文件里：pip list | tee ls_pip_tee.txt
+1. 当用户注销（logout）或者网络断开时命令继续执行：nohup ping www.ibm.com & 
+1. ls -l|grep "^d"| wc -l 查看某个文件夹下文件夹的个数
+1. ls -l|grep "^-"| wc -l 查看某个文件夹下文件的个数
 
 npm password GHWazE0UqhUtLvZIpx2H5/jf
 
 
-=======
 
 npm password GHWazE0UqhUtLvZIpx2H5/jf
 
->>>>>>> cc4031b91a65639925722176c37016ddc99e507f

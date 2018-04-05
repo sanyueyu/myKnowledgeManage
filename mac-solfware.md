@@ -2,6 +2,7 @@
 
 ## git
     1. brew install git
+    2. git config file: ~/.gitconfig
 ## oh-my-zsh + 命令行窗口反色
     1. https://github.com/robbyrussell/oh-my-zsh 
     2. 终端-偏好设置-描述文件-homebrew(主题)
@@ -21,6 +22,7 @@
 ## Docker
 
 ## vim + 解决复制问题 + 环境和插件
+    https://github.com/humiaozuzu/dot-vimrc
     1. brew install vim --override-system-vim 
     2. rm -rf ~/.vim 
     3. git clone https://github.com/sanyueyu/my.vim.git ~/.vim 
@@ -39,6 +41,7 @@
     1. brew install autojump
     2. ~/.zshrc文件最后一行增加： [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 ## seil(改键盘51 -> 53)
+    1. Mac已经可以直接改建
     1. https://pqrs.org/osx/karabiner/seil.html
 ## ihosts
     1. http://ihosts.alibaba.net/
@@ -54,4 +57,5 @@
     1. 3d03e60ea6b14b8a9e
 ## 屏幕录制
     1.https://getkap.co/ 
+## 奇妙清单
 

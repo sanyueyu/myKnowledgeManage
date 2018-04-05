@@ -18,3 +18,5 @@
 　　> mongod --dbpath D:\MongoDB\data
 　　
 3, mongoDB启动不了 发现是上次没有正常关闭mongodb的原因 暂时的解决办法是删除所有数据表 重启mongodb
+
+4. sql 大数据处理可以使用反推法, 一步步停顿验证（用临时查询）sql运行结果是最快的方法。

@@ -1,1 +1,4 @@
 - In python, once you have looped over all the elements of an iterator, you cannot loop over the iterator again
+- __init__.py的第一个作用就是package的标识，如果没有该文件，该目录就不会认为是package
+- 如果 __init__.py 不存在，这个目录就仅仅是一个目录，而不是一个包，它就不能被导入或者包含其它的模块和嵌套包
+- xgboost安装：https://www.jianshu.com/p/c2b0c3067d84

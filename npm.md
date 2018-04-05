@@ -16,6 +16,7 @@
 - package.json:  "start": "node ./script.js server $PORT"
   命令行：PORT=8080 npm start
 6. node 本地环境搭建知识：http://node.alibaba-inc.com/env/README.html?spm=0.0.0.0.MjP0Sv
+7. tnpm包增加维护者:tnpm owner add hexue.hx
 
 =======
 >>>>>>> cc4031b91a65639925722176c37016ddc99e507f
